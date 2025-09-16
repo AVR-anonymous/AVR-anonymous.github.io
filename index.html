@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="description"
+        content="">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AVR</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/robotic-arm.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <!-- <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://avr-robot.github.io">
+        <span class="icon">
+          <i class="fas fa-home"></i>
+        </span>
+      
+      </a>
+      </div>
+    </div> -->
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">AVR: Active Vision-Driven Precise Robot Manipulation with Viewpoint and Focal Length Optimization</h1>
+          <!-- <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scpsyl.github.io">Yushan Liu</a><sup>*1 </sup> </span>
+            <span class="author-block">
+              <a href="https://charon-bo.github.io/">Shilong Mu</a><sup>*1 </sup> </span>
+            <span class="author-block">
+              Xintao Chao<sup>1</sup></span>
+            <span class="author-block">
+              <a href="https://li-zizhen.github.io">Zizhen Li</a><sup>2 </sup></span>
+            <span class="author-block">
+              <a href="https://yaomarkmu.github.io/">Yao Mu</a><sup>3 </sup></span>
+            <span class="author-block">
+              <a href="https://tianxingchen.github.io/">Tianxing Chen</a><sup>3 </sup></span>
+              <span class="author-block">
+                <a href="https://www.shoujie.top/">Shoujie Li</a><sup>1 </sup></span><br>
+            <span class="author-block">
+              <a href="https://www.researchgate.net/profile/Chuqiao-Lyu">Chuqiao Lyu</a><sup>1 </sup></span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=1fzb_z8AAAAJ&hl=zh-CN&oi=sra">Xiao-ping Zhang</a><sup>1 </sup></span>
+            <span class="author-block">
+              <a href="https://ssr-group.net/">Wenbo Ding</a><sup>†1 </sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Tsinghua University </span>
+            <span class="author-block"><sup>2</sup>National University of Singapore </span><br>
+            <span class="author-block"><sup>3</sup>Shanghai Jiao Tong University </span>
+            <span class="author-block"><sup>4</sup>The University of Hong Kong </span><br>
+            <span class="author-block"><sup>*</sup>Equal contribution </span>
+            <span class="author-block"><sup>†</sup>Corresponding author </span>
+          </div>
+          <br>
+          <img src="static/images/logos.png"style="width: 70%; height: auto;"/>
+          <br><br>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+
+              <span class="link-block">
+                <a href="./resources/AVR_robot.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2503.01439"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              
+
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=eo7z8qmaCy0"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+
+          </div> -->
+
+<div class="is-size-5 publication-authors">
+  <span class="author-block">
+    <strong>Anonymous Submission</strong>
+  </span>
+</div>
+
+<!-- <div class="is-size-5 publication-authors">
+  <span class="author-block"><sup>1</sup>Affiliations withheld for double-blind review</span><br> -->
+  <!-- <span class="author-block"><sup>*</sup>Equal contribution</span>
+  <span class="author-block"><sup>†</sup>Correspondence withheld during review</span> -->
+<!-- </div> -->
+<!-- <br>
+<div class="column has-text-centered">
+  <div class="publication-links">
+
+    <span class="link-block">
+      <a href="./resources/AVR_Ano.pdf"
+         class="external-link button is-normal is-rounded is-dark">
+        <span class="icon">
+            <i class="fas fa-file-pdf"></i>
+        </span>
+        <span>Paper</span>
+      </a>
+    </span> -->
+
+    <!-- <span class="link-block">
+      <a href="https://arxiv.org/abs/2503.01439"
+         class="external-link button is-normal is-rounded is-dark">
+        <span class="icon">
+            <i class="ai ai-arxiv"></i>
+        </span>
+        <span>arXiv</span>
+      </a>
+    </span> -->
+
+    <!-- <span class="link-block">
+      <a href="https://www.youtube.com/watch?v=eo7z8qmaCy0"
+         class="external-link button is-normal is-rounded is-dark">
+        <span class="icon">
+            <i class="fab fa-youtube"></i>
+        </span>
+        <span>Video</span>
+      </a>
+    </span> -->
+
+  <!-- </div>
+</div> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- </section> -->
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- <section class="section"> -->
+  <!-- <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Overview</h2>
+        <div class="content fixed-width has-text-justified">
+        <figure class="image">
+            
+        </figure>
+      </div>
+      </div>
+    </div> -->
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Abstract</h2>
+        <div class="content fixed-width has-text-justified">
+          <p>
+            Robotic manipulation in complex scenes demands precise perception of task-relevant details, yet fixed or suboptimal viewpoints often limit resolution and induce occlusions, constraining imitation-learned policies. 
+            We present <strong>AVR (Active Vision-driven Robotics)</strong>, a bimanual teleoperation and learning framework that unifies head-tracked <strong>viewpoint control</strong> (HMD-to-2-DoF gimbal) with motorized <strong>optical zoom</strong> to keep targets centered at an appropriate scale during data collection and deployment. 
+            In simulation, an AVR plugin augments RoboTwin demonstrations by emulating active vision (ROI-conditioned viewpoint change, aspect-ratio-preserving crops with explicit zoom ratios, and super-resolution), yielding <strong>5–17%</strong> gains in task success across diverse manipulations. 
+            On our real-world platform, AVR improves success on most tasks, with more than <strong>25%</strong> incease relative to static-view baseline. 
+            Extended studies show enhanced robustness under occlusion, clutter, and lighting disturbances, and generalization to unseen environments and objects.
+          </p>
+        </div>
+        <img src="static/images/overview.png" alt="Overview of the AVR system." style="width: 65%; height: auto;"/>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- System Architecture. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Hardware Platform</h2>
+        <div class="content fixed-width has-text-justified">
+          <p>
+            Our platform features two 6-DoF Galaxea robotic arms with parallel-jaw grippers; three Intel RealSense D435i depth cameras (side + wrists) for full workspace coverage;
+            and a top-mounted active-vision unit—a motorized-zoom camera on a 2-DoF gimbal—that tracks operator head motion to deliver real-time visual feedback.
+          </p>
+          <figure class="image">
+            <img src="static/images/hardware.png" alt="System Architecture of AVR System." style="width: 90%; height: auto;"/>
+          </figure>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h2 class="title is-3">Data Collection </h2>
+        <div class="content fixed-width has-text-justified">
+          <p>
+          The top camera enables 2D viewpoint adjustment and dynamic zoom. Users rotate the VR headset to center the target and adjust zoom via keyboard or controller. 
+          </p>
+        </div>
+        
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-narrow">
+          <figure class="image" style="width: 400px; height: auto;">
+            <video controls autoplay muted loop playsinline>
+              <source src="static/videos/teleop/teleop-third-3x - Compressed.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+        <div class="column is-narrow">
+          <figure class="image" style="width: 400px; height: auto;">
+            <video controls autoplay muted loop playsinline>
+              <source src="static/videos/teleop/teleop-first 3x_compressed.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+    </div>
+    <br>
+    <!--/ System Architecture. -->
+
+    <!-- RoboTwin-based Simulation. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Simulation Evaluation</h2>
+        <div class="content fixed-width has-text-justified">
+          <figure class="image">
+            <img src="static/images/sim.png" alt="System Architecture of AVR System."/>
+          </figure>
+          <p>
+          We design a RoboTwin-based simulation environment to evaluate the performance of our AVR system in various manipulation tasks.
+          We take the front camera view from RoboTwin collected dataset as input, get detailed observation by ROI detection, aspect-ratio crop with zoom, 
+          and Real-ESRGAN super reconstruction. The processed images with zoom are appended to dataset as additional detailed observation for policy.
+
+          <div class="columns is-centered">
+            <div class="column">
+              <figure class="image">
+                <img src="static/images/input.gif" alt="" style="width: 100%; height: auto;">
+                <figcaption class="has-text-centered">Before</figcaption>
+              </figure>
+            </div>
+            <div class="column">
+              <figure class="image">
+                <img src="static/images/output.gif" alt="" style="width: 100%; height: auto;">
+                <figcaption class="has-text-centered">After</figcaption>
+              </figure>
+            </div>
+          </div>
+          <p>
+            Our approach achieved a success rate improvement ranging from 5% to 17% across all tasks.  
+            These results further validate the effectiveness of our method in various task scenarios.
+          </p>
+          
+
+          <figure class="image"></figure>
+            <div style="display: flex; justify-content: center;">
+              <img src="static/images/sim-0916.png" alt="Table showing the results of AVR experiments." style="width: 90%; height: auto;"/>
+            
+          </figure>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!--/ RoboTwin-based Simulation. -->
+    
+
+    <!-- Experiments. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Real-world Experiments</h2>
+        <div class="content fixed-width has-text-justified">
+          <p>
+            We further design a series of experiments to evaluate the performance of AVR in various manipulation tasks. 
+            We implemented different tasks in various scenarios, including pick-place handover, clothes folding, plates scurbing, three blocks stacking, 
+            and inserting a screwdriver (0.5cm diameter) into a small hole (0.75cm diameter). 
+            <br>
+            We show some of our deploy results, espcially the screwdriver insert task with <strong>uncut and real-time speed (1x)</strong>.
+            
+          </p>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!--/ Experiments. -->
+
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h2 class="title is-3">Screwdriver Insert (1x)</h2>
+        <!-- <p class="has-text-centered is-size-7 mt-3"><p>We implemented pick-and-place operations in multiple scenarios. Here, we showcase two of these scenarios.
+          <br><br></p> -->
+        <!-- <h3 class="title is-4">Scene 1</h3>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-narrow">
+        <div class="video-container">
+          <video controls autoplay muted loop playsinline>
+            <source src="static/videos/AVR_precise_thirdview.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column is-narrow">
+        <div class="video-container">
+          <video controls autoplay muted loop playsinline>
+            <source src="static/videos/AVR_precise_firstview.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <!-- <h2 class="title is-4">Scene 2</h2> -->
+        <!-- <p class="has-text-centered is-size-7 mt-3">Pick-place handover: Scene1</p> -->
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-narrow">
+        <!-- <div class="video-container">
+          <video controls autoplay muted loop playsinline style="max-width: 120%; height: auto;">
+            <source src="static/videos/insert-three(1).mp4" type="video/mp4">
+          </video> -->
+          <figure class="image" style="width: 400px; height: auto;">
+            <video controls autoplay muted loop playsinline>
+              <source src="static/videos/insert/third 1x_compressed.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+      
+      <div class="column is-narrow">
+          <figure class="image" style="width: 400px; height: auto;">
+            <video controls autoplay muted loop playsinline>
+              <source src="static/videos/insert/first 1x_compressed.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+    </div>
+      </div>
+    </div>
+    <br>
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h2 class="title is-3">Pick-place Handover</h2>
+        <!-- <p class="has-text-centered is-size-7 mt-3"><p>We implemented pick-and-place operations in multiple scenarios. Here, we showcase two of these scenarios.
+          <br><br></p> -->
+        <!-- <h3 class="title is-4">Scene 1</h3>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-narrow">
+        <div class="video-container">
+          <video controls autoplay muted loop playsinline>
+            <source src="static/videos/AVR_pickplace_thirdview.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column is-narrow">
+        <div class="video-container">
+          <video controls autoplay muted loop playsinline>
+            <source src="static/videos/AVR_pickplace_firstview.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <!-- <h2 class="title is-4">Scene 2</h2> -->
+        <!-- <p class="has-text-centered is-size-7 mt-3">Pick-place handover: Scene1</p> -->
+      </div>
+    </div>
+    
+    <div class="columns is-centered">
+      <div class="column is-narrow">
+          <figure class="image" style="width: 400px; height: auto;">
+            <video controls autoplay muted loop playsinline>
+              <source src="static/videos/pick/thrid 4x_compressed.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+        <div class="column is-narrow">
+          <figure class="image" style="width: 400px; height: auto;">
+            <video controls autoplay muted loop playsinline>
+              <source src="static/videos/pick/base_first_4x_compressed.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+    </div>
+    <br>
+
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h2 class="title is-3">Fold Clothes</h2>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-narrow">
+          <figure class="image" style="width: 400px; height: auto;">
+            <video controls autoplay muted loop playsinline>
+              <source src="static/videos/fold/third 4x_compressed (1).mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+        <div class="column is-narrow">
+          <figure class="image" style="width: 400px; height: auto;">
+            <video controls autoplay muted loop playsinline>
+              <source src="static/videos/fold/first 4x_compressed (1).mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+    </div>
+    <br>
+
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h2 class="title is-3">Plate Scurb</h2>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-narrow">
+          <figure class="image" style="width: 400px; height: auto;">
+            <video controls autoplay muted loop playsinline>
+              <source src="static/videos/dish/third 4x_compressed.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+        <div class="column is-narrow">
+          <figure class="image" style="width: 400px; height: auto;">
+            <video controls autoplay muted loop playsinline>
+              <source src="static/videos/dish/first 4x_compressed.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+    </div>
+    <br>
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h2 class="title is-3">Stack Blocks</h2>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-narrow">
+          <figure class="image" style="width: 400px; height: auto;">
+            <video controls autoplay muted loop playsinline>
+              <source src="static/videos/stack/thrid 6x_compressed.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+        <div class="column is-narrow">
+          <figure class="image" style="width: 400px; height: auto;">
+            <video controls autoplay muted loop playsinline>
+              <source src="static/videos/stack/first 6x_compressed.mp4" type="video/mp4">
+            </video>
+          </figure>
+        </div>
+    </div>
+    <br>
+   
+   
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+        <div class="content fixed-width has-text-justified">
+          The results highlight the advantages of our AVR framework: 
+          on the one hand, it improves teleoperation efficiency by reducing task completion time and failed attempts, enabling the collection of higher-quality demonstrations; 
+          on the other hand, policies trained on these demonstrations with our diffusion-based policy framework achieve consistently higher success rates, especially on fine-grained manipulations, demonstrating the overall effectiveness of our system.
+          <br>
+          <br>
+          <figure class="image">
+              <img src="static/images/teleop-0916.png" alt="Table showing the results of AVR experiments." style="width: 100%; height: auto;"/>
+              <figcaption class="has-text-centered">Average task completion time under different teleoperation settings</figcaption>
+          </figure>
+          <figure class="image">
+              <img src="static/images/real-0916.png" alt="Table showing the results of AVR experiments." style="width: 100%; height: auto;"/>
+              <figcaption class="has-text-centered">Comparison of success rates across tasks</figcaption>
+          </figure>
+          
+        </div>
+      </div>
+    </div>
+
+<div class="columns is-centered">
+  <div class="column has-text-centered">
+    <h2 class="title is-2">Extended Studies</h2>
+    <div class="content fixed-width has-text-justified">
+    <p>
+      To evaluate the ability of our AVR system to learn stableprecision operations, we designed a "Dart Throwing Expert" experiment.
+      In this experiment, a 0.5 mm ballpoint pen was mounted on the end effector of the robot gripper, and a target board composed of concentric circles with 1 cm spacing was mounted on the table. 
+      Final results showed an average score of 9.3, with more than 40% of the trials achieved a deviation of less than 1 cm.
+    </p>
+    </div>
+  </div>
+</div>
+
+<div class="columns is-centered">
+  <div class="column has-text-centered">
+    <h2 class="title is-3">Third View</h2>
+  </div>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flickity@3/dist/flickity.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flickity@3/dist/flickity.pkgd.min.js"></script>
+
+<style>
+  /* 每个视频占一半宽度 */
+  .carousel-cell {
+    width: 40%;           /* 一屏展示两个视频 */
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  video {
+    width: 100%;          /* 视频填满 slide */
+    height: auto;
+    border-radius: 8px;
+  }
+</style>
+
+<div class="carousel" data-flickity='{ "groupCells": 1, "wrapAround": true, "pageDots": true, "cellAlign": "left" }'>
+  <div class="carousel-cell">
+    <video controls autoplay muted loop playsinline>
+      <source src="static/videos/pick/luan_third 4x_compressed.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="carousel-cell">
+    <video controls autoplay muted loop playsinline>
+      <source src="static/videos/stack/deng third 6x_compressed.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="carousel-cell">
+    <video controls autoplay muted loop playsinline>
+      <source src="static/videos/pick/luan+guang third 4x_compressed.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="carousel-cell">
+    <video controls autoplay muted loop playsinline>
+      <source src="static/videos/pick/unseen env third 4x_compressed.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="carousel-cell">
+    <video controls autoplay muted loop playsinline>
+      <source src="static/videos/dish/unseen obj third 4x_compressed.mp4" type="video/mp4">
+    </video>
+  </div>
+  <!-- 继续添加 -->
+</div>
+
+<script>
+  // 初始化 Flickity
+  const flkty = new Flickity('.carousel', {
+    groupCells: 1,    // 每页显示两个
+    wrapAround: true, // 无限循环
+    pageDots: true,
+    cellAlign: 'left',
+    contain: true
+  });
+</script>
+
+<br>
+<div class="columns is-centered">
+  <div class="column has-text-centered">
+    <h2 class="title is-3">First View</h2>
+  </div>
+</div>
+<div class="carousel" data-flickity='{ "groupCells": 1, "wrapAround": true, "pageDots": true, "cellAlign": "left" }'>
+  <div class="carousel-cell">
+    <video controls autoplay muted loop playsinline>
+      <source src="static/videos/pick/luan+guang first 4x_compressed.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="carousel-cell">
+    <video controls autoplay muted loop playsinline>
+      <source src="static/videos/stack/deng first 6x_compressed.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="carousel-cell">
+    <video controls autoplay muted loop playsinline>
+      <source src="static/videos/pick/luan+guang first 4x_compressed.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="carousel-cell">
+    <video controls autoplay muted loop playsinline>
+      <source src="static/videos/pick/unseen env first 4x_compressed.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="carousel-cell">
+    <video controls autoplay muted loop playsinline>
+      <source src="static/videos/dish/unseen obj first 4x_compressed.mp4" type="video/mp4">
+    </video>
+  </div>
+  <!-- 继续添加 -->
+</div>
+
+<script>
+  // 初始化 Flickity
+  const flkty2 = new Flickity('.carousel', {
+    groupCells: 1,    // 每页显示两个
+    wrapAround: true, // 无限循环
+    pageDots: true,
+    cellAlign: 'left',
+    contain: true
+  });
+</script>
+
+      <br> <br>
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h2 class="title is-2">Failures</h2>
+        
+        <div class="content fixed-width has-text-justified">
+          <p>
+           We also show some failures of our system in the real robot experiments.😅 
+          </p>
+        </div>
+<div class="carousel" data-flickity='{ "groupCells": 1, "wrapAround": true, "pageDots": true, "cellAlign": "left" }'>
+  <div class="carousel-cell">
+    <video controls autoplay muted loop playsinline>
+      <source src="static/videos/dish/fail_compressed.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="carousel-cell">
+    <video controls autoplay muted loop playsinline>
+      <source src="static/videos/stack/fail-base 4x_compressed.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="carousel-cell">
+    <video controls autoplay muted loop playsinline>
+      <source src="static/videos/insert/fail_third_2x_compressed.mp4" type="video/mp4">
+    </video>
+  </div>
+  
+  <!-- 继续添加 -->
+</div>
+
+<script>
+  // 初始化 Flickity
+  const flkty3 = new Flickity('.carousel', {
+    groupCells: 1,    // 每页显示两个
+    wrapAround: true, // 无限循环
+    pageDots: true,
+    cellAlign: 'left',
+    contain: true
+  });
+</script>
+
+<br> <br>
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h2 class="title is-2">Conclusion and Future Work</h2>
+        
+        <div class="content fixed-width has-text-justified">
+          <p>
+           We present the AVR framework, which leverages dynamic viewpoint and focal length adjustments in active vision to enhance precise manipulation. 
+           It provides intuitive teleoperation and a reliable data collection workflow, enabling consistent viewpoint and zoom control for stable and accurate operations. 
+           Experiments in simulation and the real world show task success rate improvements of 5–17%, and over 25% gains in precision tasks, clearly surpassing conventional imitation learning. 
+           Extended tests further confirm enhanced robustness under occlusion, clutter, and lighting changes, as well as stronger generalization to unseen environments and objects.
+            <br> <br>
+            Looking ahead, we plan to improve data collection efficiency with AR glasses and data gloves to capture human perception without teleoperation, 
+            enhance viewpoint control through better gimbal mechanisms and richer sensing (e.g., wrist cameras), 
+            and develop instruction-conditioned policies to guide active perception.
+          </p>
+        </div>
+        </div>
+      </div>
+
+  </div>
+</section>
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title ">BibTeX</h2>
+    <pre><code>@misc{liu2025avractivevisiondrivenrobotic,
+      title={AVR: Active Vision-Driven Robotic Precision Manipulation with Viewpoint and Focal Length Optimization}, 
+      author={Yushan Liu and Shilong Mu and Xintao Chao and Zizhen Li and Yao Mu and Tianxing Chen and Shoujie Li and Chuqiao Lyu and Xiao-ping Zhang and Wenbo Ding},
+      year={2025},
+      eprint={2503.01439},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2503.01439}, 
+}</code></pre>
+  </div>
+</section> -->
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title ">BibTex</h2>
+    <pre><code>@misc{anonymous2025avr,
+      title={AVR: Active Vision-Driven Robotic Precision Manipulation with Viewpoint and Focal Length Optimization}, 
+      author={Anonymous Authors},
+      year={2025},
+}</code></pre>
+  </div>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      
+      <a class="icon-link" href="https://github.com/scpsyl" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
